@@ -1,0 +1,2 @@
+3.0
+{'neobundle.vim': {'checked_time': 1519364729, 'installed_uri': 'https://github.com/Shougo/neobundle.vim.git', 'installed_path': '/Users/thomas/.config/nvim/bundle/neobundle.vim', 'revisions': {}, 'updated_time': 1519364729}, 'YouCompleteMe': {'checked_time': 1519364790, 'installed_uri': 'https://github.com/Valloric/YouCompleteMe.git', 'installed_path': '/Users/thomas/.config/nvim/bundle/YouCompleteMe', 'revisions': {'1519122364': 'd27563d2f1ab6414fe795cbb4b93481879f2e71c'}, 'updated_time': '1519122364'}}
