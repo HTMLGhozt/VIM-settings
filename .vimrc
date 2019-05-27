@@ -16,6 +16,8 @@ set ruler                 "turn on column and line position
 set tabstop=2		          "how many columns a tab counts for.
 set shiftwidth=2	        "how many columns when using reindent operations
 set expandtab		          "set tabs to spaces
+set hlsearch              "highlight matches
+autocmd FileType javascript JsPreTmpl
 
 set history=100 	        "set history to remember the last 100 commands
 
@@ -25,12 +27,16 @@ let g:netrw_browse_split = 4 "netrw to open in previous window
 let g:netrw_altv = 1      "Open to netrw to the left
 let g:netrw_winsize = 25  "Set netrw windowsize to 25%
 
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
-
+"Close netrw if it's the only buffer open
 aug netrw_close
   au!
   au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw"|q|endif
 aug END
+
+"move lines up (ctrl+k) and down (ctrl+j)
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
